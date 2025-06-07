@@ -4,7 +4,7 @@ services:
       context: ./backend
     container_name: gosar-backend
     ports:
-      - "8080:8080"
+      - "9090:9090"
     volumes:
       - ./backend:/app
     command: air

@@ -11,9 +11,8 @@ func SetupRoutes(r *gin.Engine) {
 	public := r.Group("/api/public")
 	{
 		// Auth
-		public.POST("/login", handlers.Login)
 		public.POST("/register", handlers.Register)
-
+		public.POST("/login", handlers.Login)
 		// Categories
 		public.GET("/categories", handlers.GetCategories)
 		public.POST("/categories", handlers.CreateCategory)
@@ -38,6 +37,7 @@ func SetupRoutes(r *gin.Engine) {
 	protected := r.Group("/api/protected")
 	protected.Use(middleware.AuthenticationMiddleware())
 	{
-		// Tambahkan route yang membutuhkan auth di sini
+		// Auth
+
 	}
 }

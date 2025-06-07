@@ -1,17 +1,92 @@
 {
+  // Default Settings
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnType": false,
   "editor.formatOnPaste": true,
   "editor.formatOnSaveMode": "file",
   "files.autoSave": "onFocusChange",
   "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+
+  // Language Specific Formatters
   "[go]": {
     "editor.defaultFormatter": "golang.go"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.autoClosingTags": true,
+    "html.autoClosingTags": true,
+    "html.autoCreateQuotes": true,
+    "html.format.wrapLineLength": 80,
+    "html.format.wrapAttributes": "auto"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "css.lint.unknownProperties": "ignore",
+    "css.validate": true
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+
+  // Prettier Configuration
+  "prettier.singleQuote": true,
+  "prettier.semi": false,
+  "prettier.tabWidth": 2,
+  "prettier.jsxSingleQuote": true,
+  "prettier.printWidth": 80,
+  "prettier.htmlWhitespaceSensitivity": "css",
+  "prettier.arrowParens": "avoid",
+  "prettier.bracketSameLine": true,
+  "prettier.endOfLine": "auto",
+  "prettier.proseWrap": "always",
+
+  // CSS/SCSS Specific
+  "css.lint.vendorPrefix": "warning",
+  "scss.lint.duplicateProperties": "warning",
+  "tailwindCSS.includeLanguages": {
+    "html": "html",
+    "javascript": "javascript",
+    "typescript": "typescript"
+  },
+
+  // TypeScript/JavaScript
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "typescript.format.enable": true,
+  "javascript.format.enable": true,
+
+  // HTML Enhancements
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact",
+    "svelte": "html"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "html.format.enable": true,
+  "html.format.preserveNewLines": true,
+
+  // Workspace Trust (Security)
+  "security.workspace.trust.untrustedFiles": "open"
 }
