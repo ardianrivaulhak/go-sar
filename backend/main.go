@@ -2,6 +2,7 @@ package main
 
 import (
 	"backend/config"
+	"backend/middleware"
 	"backend/migration"
 	"backend/routes"
 
@@ -11,9 +12,10 @@ import (
 func main() {
 	config.ConnectDB()
 	migration.RunMigrations()
-	r := gin.Default()
 
+	r := gin.Default()
+	r.Use(middleware.CORSMiddleware())
 	routes.SetupRoutes(r)
 
-	r.Run(":9090")
+	r.Run(":9091")
 }

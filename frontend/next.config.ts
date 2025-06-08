@@ -8,7 +8,6 @@ const nextConfig: NextConfig = {
 
   // Untuk NextAuth.js
   serverActions: true,
-
   webpack: config => {
     config.resolve.alias['@'] = path.resolve(__dirname)
     return config

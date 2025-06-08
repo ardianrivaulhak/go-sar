@@ -6,18 +6,22 @@ import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
 
 export default function ClientLayout({
-  children,
+  children, // Pastikan children diterima sebagai prop
 }: {
   children: React.ReactNode
 }) {
   return (
     <SessionProvider>
-      <Navbar />
-      <div className='flex flex-1'>
-        <Sidebar />
-        <main className='flex-1 p-8 ml-64'>{children}</main>
+      <div className='min-h-screen flex flex-col'>
+        <Navbar />
+        <div className='flex flex-1'>
+          <Sidebar />
+          <main className='flex-1 ml-0 md:ml-64 p-4'>
+            {children} {/* Pastikan children di-render di sini */}
+          </main>
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </SessionProvider>
   )
 }
